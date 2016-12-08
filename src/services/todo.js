@@ -4,6 +4,8 @@ export const UPDATE_TODO_LIST = 'UPDATE_TODO_LIST';
 
 export const UPDATE_TODO = todoId => 'UPDATE_TODO_' + todoId;
 
+export const UPDATE_FILTER = 'UPDATE_FILTER';
+
 export function editTodo(store, todoId) {
 	store.updateState({
 		todos: store.state.todos.map(storeTodo => {

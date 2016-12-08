@@ -5,6 +5,8 @@ import {ClearAllButton} from './ClearAllButton';
 
 import {UPDATE_TODO_LIST} from '../services/todo';
 
+import {FilterButtons} from './FilterButtons';
+
 export class Footer extends ConnectedComponent {
 	eventsToSubscribe() {
 		return [UPDATE_TODO_LIST];
@@ -17,6 +19,7 @@ export class Footer extends ConnectedComponent {
 		return (
 			<footer class="footer">
 				<TodoCounter />
+				<FilterButtons />
 				<ClearAllButton />
 			</footer>
 		);

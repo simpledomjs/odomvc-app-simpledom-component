@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "webpack -p --colors",
+    "build": "webpack -p --colors --devtool source-map",
     "start": "webpack -d --progress --colors --watch"
   },
   "devDependencies": {
@@ -21,6 +21,7 @@
     "webpack": "1.13.2"
   },
   "dependencies": {
+    "rlite-router": "^1.1.3",
     "simpledom-component": "0.4.6",
     "todomvc-app-css": "^2.0.0",
     "todomvc-common": "^1.0.0"
