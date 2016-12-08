@@ -1,6 +1,9 @@
 import {el, ConnectedComponent} from 'simpledom-component';
 
-import {updateCompleted, UPDATE_TODO, deleteTodo, editTodo, updateTodo} from '../services/todo';
+import {updateCompleted, UPDATE_TODO, deleteTodo, editTodo, updateTodo} from '../model/todo';
+
+const ENTER_KEY = 13;
+const ESCAPE_KEY = 27;
 
 export class Todo extends ConnectedComponent {
 
@@ -22,15 +25,23 @@ export class Todo extends ConnectedComponent {
 		editTodo(this.store, this.props.todoId);
 	}
 
-	static blurIfEnter(event) {
-		if (event.keyCode === 13) {
+	handleKeyUp(event) {
+		if (event.keyCode === ENTER_KEY) {
+			event.target.blur();
+		} else if (event.keyCode === ESCAPE_KEY) {
+			event.target.value = this.currentTodo().title;
 			event.target.blur();
 		}
 	}
 
 	updateTodo(event) {
 		event.preventDefault();
-		updateTodo(this.store, this.props.todoId, event.target.value);
+		const value = event.target.value && event.target.value.trim();
+		if (value) {
+			updateTodo(this.store, this.props.todoId, value);
+		} else {
+			deleteTodo(this.store, this.props.todoId);
+		}
 	}
 
 	refInputEdit(nodeInputEdit) {
@@ -56,10 +67,10 @@ export class Todo extends ConnectedComponent {
 					<input class="toggle" type="checkbox" checked={todo.completed ? 'checked' : undefined}
 						   onChange={this.updateCompleted}
 					/>
-					<label onDblClick={this.editTodo}>{todo.label}</label>
+					<label onDblClick={this.editTodo}>{todo.title}</label>
 					<button class="destroy" onClick={this.deleteTodo}/>
 				</div>
-				<input ref={this.refInputEdit} class="edit" value={todo.label} onKeyUp={Todo.blurIfEnter} onBlur={this.updateTodo}/>
+				<input ref={this.refInputEdit} class="edit" value={todo.title} onKeyUp={this.handleKeyUp} onBlur={this.updateTodo}/>
 			</li>
 		)
 	}

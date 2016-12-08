@@ -1,8 +1,9 @@
 import {el, Component, ConnectedComponent} from 'simpledom-component';
 
 import {Todo} from './Todo';
+import {ToggleButton} from './ToggleButton';
 
-import {UPDATE_COMPLETE, UPDATE_TODO_LIST, UPDATE_FILTER, toggleAll} from '../services/todo';
+import {UPDATE_TODO_LIST, UPDATE_FILTER} from '../model/todo';
 
 export class Main extends ConnectedComponent {
 	eventsToSubscribe() {
@@ -33,28 +34,5 @@ export class Main extends ConnectedComponent {
 				</ul>
 			</section>
 		);
-	}
-}
-
-export class ToggleButton extends ConnectedComponent {
-	eventsToSubscribe() {
-		return [UPDATE_COMPLETE]
-	}
-
-	toggleAll(event) {
-		toggleAll(this.store, event.target.checked);
-	}
-
-	isChecked() {
-		return !this.state.todos.filter(todo => !todo.completed).length;
-	}
-
-	render() {
-		return (
-			<input class="toggle-all" type="checkbox"
-				   onChange={this.toggleAll}
-				   checked={this.isChecked() ? 'checked' : undefined}
-			/>
-		)
 	}
 }

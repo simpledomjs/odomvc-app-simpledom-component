@@ -3,7 +3,7 @@ import {el, ConnectedComponent} from 'simpledom-component';
 import {TodoCounter} from './TodoCounter';
 import {ClearAllButton} from './ClearAllButton';
 
-import {UPDATE_TODO_LIST} from '../services/todo';
+import {UPDATE_TODO_LIST} from '../model/todo';
 
 import {FilterButtons} from './FilterButtons';
 

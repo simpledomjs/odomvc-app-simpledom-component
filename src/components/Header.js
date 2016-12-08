@@ -1,12 +1,12 @@
 
 import {el, Component} from 'simpledom-component';
 
-import {addTodo} from '../services/todo';
+import {addTodo} from '../model/todo';
 
 export class Header extends Component {
 
 	addTodo(event) {
-		const todoVal = event.target.value;
+		const todoVal = event.target.value && event.target.value.trim();
 		if (todoVal) {
 			event.target.value = '';
 			addTodo(this.store, todoVal);

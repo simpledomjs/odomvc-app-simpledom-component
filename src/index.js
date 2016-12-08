@@ -1,42 +1,23 @@
 import {el, renderToDom, Store} from 'simpledom-component';
 import {TodoApp} from './components/TodoApp';
 
-import {UPDATE_FILTER} from './services/todo';
+import {initRouter} from './router';
 
-import Rlite from 'rlite-router';
+import {fetchTodos, persistTodos} from './model/localStorage';
+import {SYNC_TO_LOCALSTORAGE} from './model/todo';
 
 const store = new Store(
 	{
-		todos: [
-			{
-				id: 1,
-				completed: true,
-				label: 'Create a TodoMVC template'
-			},
-			{
-				id: 2,
-				completed: false,
-				label: 'Rule the web'
-			}
-		],
+		todos: fetchTodos(),
 		filter: 'all'
 	}
 );
 
-const router = Rlite();
+initRouter(store);
 
-router.add('', () => store.updateState({filter: 'all'}, UPDATE_FILTER));
-router.add('active', () => store.updateState({filter: 'active'}, UPDATE_FILTER));
-router.add('completed', () => store.updateState({filter: 'completed'}, UPDATE_FILTER));
-
-// Hash-based routing
-function processHash() {
-	const hash = location.hash || '#';
-	router.run(hash.slice(1));
-}
-
-window.addEventListener('hashchange', processHash);
-processHash();
+store.subscribe(SYNC_TO_LOCALSTORAGE, (event, state) => {
+	persistTodos(state.todos);
+});
 
 renderToDom('todoapp', <TodoApp/>, store);
 

@@ -1,7 +1,7 @@
 
 import {el, ConnectedComponent} from 'simpledom-component';
 
-import {UPDATE_FILTER} from '../services/todo';
+import {UPDATE_FILTER} from '../model/todo';
 
 export class FilterButtons extends ConnectedComponent {
 	eventsToSubscribe() {

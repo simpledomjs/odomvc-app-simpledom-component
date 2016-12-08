@@ -1,5 +1,5 @@
 import {el, ConnectedComponent, predicate} from 'simpledom-component';
-import {UPDATE_COMPLETE, deleteCompleted} from '../services/todo'
+import {UPDATE_COMPLETE, deleteCompleted} from '../model/todo'
 
 export class ClearAllButton extends ConnectedComponent {
 	eventsToSubscribe() {
