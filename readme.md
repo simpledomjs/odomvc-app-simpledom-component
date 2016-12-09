@@ -1,35 +1,28 @@
-# Framework Name • [TodoMVC](http://todomvc.com)
+# simpledom-component • [TodoMVC](http://todomvc.com)
 
-> Official description of the framework (from its website)
+> Just an other javascript component framework!
 
 
 ## Resources
 
-- [Website]()
-- [Documentation]()
-- [Used by]()
-- [Blog]()
-- [FAQ]()
-
-### Articles
-
-- [Interesting article]()
+- [Website](https://simpledomjs.github.io/simpledom-component/)
+- [Documentation](https://simpledomjs.github.io/simpledom-component/esdoc/)
 
 ### Support
 
-- [Stack Overflow](http://stackoverflow.com/questions/tagged/__)
-- [Google Groups]()
-- [Twitter](http://twitter.com/__)
-- [Google+]()
-
-*Let us [know](https://github.com/tastejs/todomvc/issues) if you discover anything worth sharing.*
-
+- [github](https://github.com/simpledomjs/simpledom-component/issues)
 
 ## Implementation
 
-How was the app created? Anything worth sharing about the process of creating the app? Any spec violations?
+This app was build using JSX.
+Sources are under src directory.
+
+To make changes, simple run :
+* ```npm install```
+* ```npm start```
+* Open the file ./index.html in your favorite browser.
 
 
 ## Credit
 
-Created by [Your Name](http://your-website.com)
+Created by [Yan Bonnel](https://github.com/ybonnel)
