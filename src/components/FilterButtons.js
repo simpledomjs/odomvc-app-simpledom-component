@@ -1,9 +1,9 @@
 
-import {el, ConnectedComponent} from 'simpledom-component';
+import {el, Component} from 'simpledom-component';
 
 import {UPDATE_FILTER} from '../model/todo';
 
-export class FilterButtons extends ConnectedComponent {
+export class FilterButtons extends Component {
 	eventsToSubscribe() {
 		return [UPDATE_FILTER];
 	}

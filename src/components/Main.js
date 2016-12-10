@@ -1,11 +1,11 @@
-import {el, Component, ConnectedComponent} from 'simpledom-component';
+import {el, Component} from 'simpledom-component';
 
 import {Todo} from './Todo';
 import {ToggleButton} from './ToggleButton';
 
 import {UPDATE_TODO_LIST, UPDATE_FILTER} from '../model/todo';
 
-export class Main extends ConnectedComponent {
+export class Main extends Component {
 	eventsToSubscribe() {
 		return [UPDATE_TODO_LIST, UPDATE_FILTER];
 	}

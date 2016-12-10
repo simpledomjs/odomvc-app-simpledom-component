@@ -2538,15 +2538,15 @@ signal-exit@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
-simpledom-component@0.4.6:
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/simpledom-component/-/simpledom-component-0.4.6.tgz#ee0b28e7a52b98098e7024e953e30fe4b9048ee1"
+simpledom-component@0.4.14:
+  version "0.4.14"
+  resolved "https://registry.yarnpkg.com/simpledom-component/-/simpledom-component-0.4.14.tgz#5986251ea00f22fac441e2a3080d3e2868c6f8bd"
   dependencies:
-    simpledom.js "1.0.1"
+    simpledom.js "1.1.1"
 
-simpledom.js@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/simpledom.js/-/simpledom.js-1.0.1.tgz#23f7e30654eac11ab8d0d8015ecc702a2190961f"
+simpledom.js@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/simpledom.js/-/simpledom.js-1.1.1.tgz#112f5b66cc4e014c2a2c16551d7e6d293a30955b"
   dependencies:
     babel-runtime "6.9.2"
 

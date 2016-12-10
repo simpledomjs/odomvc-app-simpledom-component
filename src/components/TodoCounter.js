@@ -1,7 +1,7 @@
-import {el, ConnectedComponent} from 'simpledom-component';
+import {el, Component} from 'simpledom-component';
 import {UPDATE_COMPLETE} from '../model/todo';
 
-export class TodoCounter extends ConnectedComponent {
+export class TodoCounter extends Component {
 
 	eventsToSubscribe() {
 		return [UPDATE_COMPLETE];

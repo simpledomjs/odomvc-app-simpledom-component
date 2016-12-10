@@ -1,4 +1,4 @@
-import {el, ConnectedComponent} from 'simpledom-component';
+import {el, Component} from 'simpledom-component';
 
 import {TodoCounter} from './TodoCounter';
 import {ClearAllButton} from './ClearAllButton';
@@ -7,7 +7,7 @@ import {UPDATE_TODO_LIST} from '../model/todo';
 
 import {FilterButtons} from './FilterButtons';
 
-export class Footer extends ConnectedComponent {
+export class Footer extends Component {
 	eventsToSubscribe() {
 		return [UPDATE_TODO_LIST];
 	}

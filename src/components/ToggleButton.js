@@ -1,7 +1,7 @@
-import {el, ConnectedComponent} from 'simpledom-component';
+import {el, Component} from 'simpledom-component';
 import {UPDATE_COMPLETE, toggleAll} from '../model/todo';
 
-export class ToggleButton extends ConnectedComponent {
+export class ToggleButton extends Component {
 	eventsToSubscribe() {
 		return [UPDATE_COMPLETE]
 	}

@@ -1,11 +1,11 @@
-import {el, ConnectedComponent} from 'simpledom-component';
+import {el, Component} from 'simpledom-component';
 
 import {updateCompleted, UPDATE_TODO, deleteTodo, editTodo, updateTodo} from '../model/todo';
 
 const ENTER_KEY = 13;
 const ESCAPE_KEY = 27;
 
-export class Todo extends ConnectedComponent {
+export class Todo extends Component {
 
 	eventsToSubscribe() {
 		return [
@@ -61,17 +61,15 @@ export class Todo extends ConnectedComponent {
 	render() {
 		const todo = this.currentTodo();
 
-		return (
-			<li class={{completed: todo.completed, editing: todo.editing}}>
-				<div class="view">
-					<input class="toggle" type="checkbox" checked={todo.completed ? 'checked' : undefined}
-						   onChange={this.updateCompleted}
-					/>
-					<label onDblClick={this.editTodo}>{todo.title}</label>
-					<button class="destroy" onClick={this.deleteTodo}/>
-				</div>
-				<input ref={this.refInputEdit} class="edit" value={todo.title} onKeyUp={this.handleKeyUp} onBlur={this.updateTodo}/>
-			</li>
-		)
+		return <li class={{completed: todo.completed, editing: todo.editing}}>
+			<div class="view">
+				<input class="toggle" type="checkbox" checked={todo.completed ? 'checked' : undefined}
+					   onChange={this.updateCompleted}
+				/>
+				<label onDblClick={this.editTodo}>{todo.title}</label>
+				<button class="destroy" onClick={this.deleteTodo}/>
+			</div>
+			<input ref={this.refInputEdit} class="edit" value={todo.title} onKeyUp={this.handleKeyUp} onBlur={this.updateTodo}/>
+		</li>
 	}
 }
